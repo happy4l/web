@@ -1,0 +1,120 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web</title>
+  <style>
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #ccc;
+    }
+
+    /* CSS for login form */
+    .login-form {
+      display: none;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    /* CSS for bottom navigation */
+    .bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ccc;
+      padding: 10px;
+    }
+
+    /* CSS for side navigation */
+    .side-nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #ccc;
+      padding: 10px;
+    }
+
+    /* CSS for content */
+    .content {
+      padding: 10px;
+    }
+
+    /* CSS for responsive layout */
+    @media only screen and (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .bottom-nav {
+        display: block;
+      }
+
+      .side-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Website</h1>
+    <button id="loginBtn">Login</button>
+  </header>
+
+  <div class="login-form" id="loginForm">
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <nav class="side-nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="content">
+    <h2>Welcome to the website!</h2>
+    <p>This is the content of the website.</p>
+  </div>
+
+  <script>
+    // JavaScript to show/hide login form
+    const loginBtn = document.getElementById("loginBtn");
+    const loginForm = document.getElementById("loginForm");
+
+    loginBtn.addEventListener("click", function () {
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+      } else {
+        loginForm.style.display = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
